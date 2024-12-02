@@ -48,7 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     private static String mqttHost = "tcp://personajes.cloud.shiftr.io" ;
     private static String IdUsuario = "AppAndroid";
-    private static String Topico= "Ultimo-Registro" ;
+    private static String Topico= "1-Ultimo-Registro-Rut" ;
+    private static String Topico2= "2-Nombre" ;
+    private static String Topico3= "3-Edad" ;
+    private static String Topico4 = "4-Oficio" ;
+    private static String Topico5 = "5-Personalidad" ;
+    private static String Topico6 = "6-Tipo" ;
+    private static String Topico7 = "7-Genero" ;
     private static String User= "personajes";
     private static String Pass= "qpgeN2fReLEaKk3z" ;
 
@@ -165,8 +171,14 @@ public class MainActivity extends AppCompatActivity {
         String personalidad = spPersonalidad.getSelectedItem().toString();
         String tipo = spTipo.getSelectedItem().toString();
         String genero = spGenero.getSelectedItem().toString();
-        String Mensaje ="Rut:"+ rut + " Nombre:"+ nombre;
-        //" Edad:"+edad+" Oficio:"+ oficio+ " Personalidad:"+ personalidad+ "TIpo:"+tipo+ "Genero:"+genero
+        String Mensaje ="Rut:"+ rut ;
+        String Mensaje2 = "Nombre:"+ nombre ;
+        String Mensaje3 =  "Edad:" +edad;
+        String Mensaje4 = " Oficio:"+  oficio ;
+        String Mensaje5 =  "Personalidad:"+ personalidad ;
+        String Mensaje6 = "Tipo:"+tipo;
+        String Mensaje7 = "Genero:"+genero;
+
 
         Map<String, Object> personaje = new HashMap<>();
         personaje.put("rut", rut);
@@ -186,6 +198,12 @@ public class MainActivity extends AppCompatActivity {
         try {
             if (mqttClient != null && mqttClient.isConnected()){
                 mqttClient.publish(Topico, Mensaje.getBytes(), 0, false);
+                mqttClient.publish(Topico2, Mensaje2.getBytes(), 0, false);
+                mqttClient.publish(Topico3, Mensaje3.getBytes(), 0, false);
+                mqttClient.publish(Topico4, Mensaje4.getBytes(), 0, false);
+                mqttClient.publish(Topico5, Mensaje5.getBytes(), 0, false);
+                mqttClient.publish(Topico6, Mensaje6.getBytes(), 0, false);
+                mqttClient.publish(Topico7, Mensaje7.getBytes(), 0, false);
                 txtAlerta.append("\n -" + "Enviado");
                 Toast.makeText(MainActivity.this, "Mensaje Enviado", Toast.LENGTH_SHORT).show();
             }else {
