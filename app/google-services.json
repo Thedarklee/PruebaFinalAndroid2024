@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1006482412945",
+    "project_id": "personajes-originales",
+    "storage_bucket": "personajes-originales.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006482412945:android:42ee70fc43b82e45c97630",
+        "android_client_info": {
+          "package_name": "com.stomas.formulariodepersonajes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJJeGYioh3rc2nUWVCzm0bu0ecG3Pn6no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
